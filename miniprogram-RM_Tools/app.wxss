@@ -1,0 +1,10 @@
+/**app.wxss**/
+
+.hidden{
+  display: none;
+}
+
+page {
+  height: 100%;
+  font-family: 'Bitstream Vera Serif Bold';
+}

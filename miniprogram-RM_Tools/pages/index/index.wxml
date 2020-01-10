@@ -1,0 +1,5 @@
+<!-- <view class="loading">Loading your accounts</view> -->
+
+<!-- <web-view src="https://cmb.wechat.hsbcnet.com/weconnect-front/dist/miniprograms-rm-tools/index.html#/{{path}}?login=true&openId=&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJpZFwiOlwiMTIzMjEzXCIsXCJvcGVuSWRcIjpcIjM0MjQzMjRcIixcInBlcnNvbklkXCI6XCJDRkY3N0NBRDNCRDc0OUZBQTQ2MDM2QUMyQkEzNjZCM1wiLFwic3RhZmZJZFwiOlwiNDMxODU4MzZcIn0iLCJhdWQiOiI0MzE4NTgzNiJ9.aosjuM8wGc2XuwdSeNM9yZ4w0bdhMnT37uJzcnvoc-k"></web-view> -->
+<!-- <web-view src="https://www.farben.club:12880/demo/dist/miniprograms-rm-tools/index.html"></web-view> -->
+<web-view src="{{url}}"></web-view>

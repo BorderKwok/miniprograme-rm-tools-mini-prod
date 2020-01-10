@@ -1,0 +1,108 @@
+<!--pages/rmhome/rmhome.wxml-->
+<view class="contentpage">
+<view class="sales-waper">
+  <label class="label-waper">My sales leads</label>
+  <view class="icon_poson" wx:if="{{!pageInfo.listradio}}">
+    <image bindtap="showCostDetailFun" class="filter-icon" src="../../pictures/rmhome/icn_Filter.png"></image>
+    <image bindtap="bulkrefer" class="icon-person" src="../../pictures/rmhome/icn_more.png"></image>
+  </view>
+  <view class="icon_poson icon_poson_close" wx:if="{{pageInfo.listradio}}">
+    <image bindtap="closeBulkrefer" class="icon-close" src = "../../pictures/rmhome/icn_Close.png"></image>
+  </view>
+</view>
+
+<!-- <view class="filter-label">Filter by</view> -->
+<view class="filter-waper" wx:if="{{!pageInfo.listradio}}">
+  <view class="items {{filterItemStyle.item1}}" data-items="1" bindtap="filterActions">Active({{activeNum}})</view>
+  <view class="items {{filterItemStyle.item2}}" data-items="2" bindtap="filterActions">Closed({{closedNum}})</view>
+  <view class="items {{filterItemStyle.item3}}" data-items="3" bindtap="filterActions">Cold({{coldNum}})</view>
+</view>
+
+<view class="search-waper">
+  <view class="search-box">
+    <input class="search-input {{isFocus==1 ? 'current':''}}" placeholder="Search" bindfocus="ifFocus" bindblur="ifBlur" value='{{inputValue}}'><i bindtap="clearInputEvent"></i></input>
+    <span class="{{isFocus==1 ? 'current':''}}">Cancel</span>
+  </view>
+</view>
+  <checkbox-group bindchange="prospectcheckbox">
+
+  <view class="content-wapper" wx:for="{{rmList}}" wx:for-item="item" data-index="{{index}}" bindtap="goDetail">
+    <view class="proity {{item.Priority=='Mid' ? 'mid':''}} {{item.Priority=='Low' ? 'low':''}}">{{item.Priority}}</view>
+    <view class="content">
+      <view class="com-name">{{item.LocalName}} <view class="icon {{item.HasViewed==false ? 'current':''}}"></view></view>
+      <view class="item-status">
+        <view class="item-font">{{item.Status}}</view>
+        <view class="item-date">{{item.DueDate}}</view>
+        <view class="icon-warning {{item.warning==1 ? 'current':''}}"></view>
+      </view>
+      <view class="item-status">
+        <view class="item-font">Assigned RM</view>
+        <view class="item-date">{{item.AssigneeName}}</view>
+        </view>
+    </view>
+    <view class="icon-right" wx:if="{{!pageInfo.listradio}}"></view>
+    <view wx:if="{{pageInfo.listradio}}" style="display:flex; align-items:center;">
+    <checkbox class="radio-new-bulk" value="2" checked="{{checkbox}}"></checkbox></view>
+  </view>
+  
+  </checkbox-group>
+</view>
+
+<!-- filter -->
+<view hidden='{{!show}}' catchtouchmove='{{false}}' animation="{{animationData}}" class="mCostDetail">
+  <view class="mCostDetail__box">
+    <scroll-view scroll-y="{{true}}" style='height: 100%;'>
+      <view class="filter-content-waper">
+        <view class="closebar">
+          <label>Filter</label>
+          <image bindtap="hideCostDetailFun" class="icon-close" src = "../../pictures/rmhome/icn_Close.png"></image>
+        </view>
+        <view class="headlist-waper">
+          <view class="header">Show</view>
+          <view class="list-item">
+            <view>All RM</view>
+            <image class="img-icon-right" src="../../pictures/rmhome/icn_chevron_right_thick.png"></image>
+          </view>
+          <view>
+            <view class="header">Sort by</view>
+            <radio-group class="radio-group " bindchange="radioChange">
+              <view class="radio-margin">
+                  <label>OverDue</label>
+                  <radio class="radio-new"></radio>
+                </view>
+            </radio-group>
+          </view>
+          
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- radio prospect selected -->
+<view class="warning-waper" wx:if="{{pageInfo.warning}}">
+  <view class="waring-header">
+    <view class="war-head-right">
+      <image class="img-icon" src="../../pictures/rmhome/icn_Success_OnDark.png"></image>
+      <view>{{prospectCount}} prospect selected</view>
+    </view>
+    <image bindtap="closeBulkrefer" class="icon-close" src = "../../pictures/rmhome/icn_Close.png"></image>
+  </view>
+  <view class="down">
+    <view class="down1">Bulk refer</view>
+    <view class="down2" bindtap="clear">Clear</view>
+  </view>
+</view>
+
+
+<!-- zhezhao -->
+<view class="content-alert" wx:if="{{pageInfo.alert}}">
+    <view class="alert-content">
+        <view class="title">Confirm discard updates</view>
+        <view class="content-msg">Are you sure you want to discard all updates on this page?</view>
+        <view class="btns">
+            <input bindtap="discard" class="btns1 disable" type="button" value="Discard"></input>
+            <input bindtap="back" class="btns1 enable" type="button" value="Back"></input>
+        </view>
+    </view>
+</view>

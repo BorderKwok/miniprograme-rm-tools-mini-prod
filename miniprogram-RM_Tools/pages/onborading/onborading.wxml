@@ -1,0 +1,29 @@
+<!--pages/onborading/onborading.wxml-->
+<!-- <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" 
+  interval="{{interval}}" 
+  duration="{{duration}}" 
+  bindchange="eventChange" 
+  indicator-color="#D7D8D6"
+  indicator-active-color="#DB0011"
+  class="swiper-waper">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item class="item-waper">
+      <view wx:if = "{{msg.skip}}" class="skip-style" id="en" bindtap="start">Skip</view>
+      <view class="img-waper">
+        <image src="{{item}}" class="slide-image"/>
+      </view>
+      <view class="content-waper">
+        <view class="title-font">{{msg.title}}</view>  
+        <view class="title-font2">{{msg.title1}}</view>
+      </view>
+      <view wx:if="{{msg.btn}}" class="btn-waper">
+        <button id="en" bindtap="start" class="btn">Startx</button>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> -->
+<view class="blank">
+  <text>We are working on something \n very interesting!</text>
+  <navigator url="/pages/rmhome/rmhome" open-type="switchTab">Back</navigator>
+</view>

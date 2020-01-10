@@ -1,0 +1,7 @@
+<!-- <web-view src="https://www.farben.club:12880/demo/dist/miniprograms-rm-tools/index.html#/prospectdetails?tid={{tid}}"></web-view> -->
+
+<!-- <web-view src="http://www.farben.club:9080/demo/dist/miniprograms-rm-tools/index.html#/prospectdetails"></web-view> -->
+
+<web-view src="https://cmb.wechat.hsbcnet.com/weconnect-front/dist/miniprograms-rm-tools/index.html#/{{path}}?tid={{tid}}"></web-view>
+
+<!-- <web-view src="https://www.farben.club:12880/demo/dist/miniprograms-rm-tools/index.html#/{{path}}?tid={{tid}}"></web-view> -->
